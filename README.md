@@ -64,5 +64,5 @@ Libraries used
 * RxJava/Android - So the app is reactive/asynchronous  and can make use of streams
 
 
-![alt tag](https://github.com/brightsgithub/brights-the-app-business/blob/master/comics_list.png)
-![alt tag](https://github.com/brightsgithub/brights-the-app-business/blob/master/comic_detail.png)
+![alt tag](https://github.com/brightsgithub/brights-mvp-tutorial/blob/master/comics_list.png)
+![alt tag](https://github.com/brightsgithub/brights-mvp-tutorial/blob/master/comic_detail.png)
