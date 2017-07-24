@@ -1,0 +1,93 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        // https://github.com/evant/gradle-retrolambda
+        // A gradle plugin for getting java lambda support in java 6, 7 and android
+        classpath 'me.tatarka:gradle-retrolambda:3.3.0-beta4'
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'me.tatarka.retrolambda' // so we can use Lambdas
+
+android {
+    // You can do testing on a different build variant; but only on one! The default is debug.
+    // Because we are using a different classes from our normal debug variant to test we use
+    // debugForTesting. debug will function as normal i.e. it will call the real server when
+    // the app is launched etc
+    testBuildType "debugForTesting"
+
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+
+    defaultConfig {
+
+        /**
+         * By default a library only publishes its release variant. This variant will be used by all
+         * projects referencing the library, no matter which variant they build themselves.
+         */
+        publishNonDefault true
+
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            signingConfig signingConfigs.debug
+        }
+
+        debugForTesting {
+            debuggable = true
+            minifyEnabled false
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        // To avoid: DuplicateFileException: Duplicate files copied in APK META-INF/rxjava.properties
+        // This exclude must be kept at in this module gradle file rather than the data layer
+        // module. This is due to the build order?
+        exclude 'META-INF/rxjava.properties'
+    }
+}
+
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    //compile project(':datalayer') // bad since it will build the release variant
+
+    // When we change one variant, they will all be in sync. See publishNonDefault true above
+    debugCompile project(path: ':datalayer', configuration: "debug")
+    releaseCompile project(path: ':datalayer', configuration: "release")
+    debugForTestingCompile project(path: ':datalayer', configuration: "debugForTesting")
+
+    // Needed for instumented tests to Run!
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    testCompile 'junit:junit:4.12'
+
+    androidTestCompile project(':testutils')
+
+    // 64k Method limit (https://developer.android.com/studio/build/multidex.html)
+    compile 'com.android.support:multidex:1.0.1'
+}

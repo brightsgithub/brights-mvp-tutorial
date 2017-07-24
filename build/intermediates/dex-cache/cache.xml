@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/bright/Documents/Brights Folder/dev/APP_DEVELOPMENT/ANDROID_2/WORK_SPACES/GITEXAMPLES/BrightsMVPTutorial/datalayer/build/intermediates/bundles/debugForTesting/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a6fe2b88c2fe2a9ff3583e613a0ea1f638296c9d">
+        <dex dex="/Users/bright/Documents/Brights Folder/dev/APP_DEVELOPMENT/ANDROID_2/WORK_SPACES/GITEXAMPLES/BrightsMVPTutorial/presentationlayer/build/intermediates/transforms/dex/debugForTesting/folders/1000/4/classes_cdbdbc361594dea05781d532963f67311bbffa09/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/bright/Documents/Brights Folder/dev/APP_DEVELOPMENT/ANDROID_2/WORK_SPACES/GITEXAMPLES/BrightsMVPTutorial/testutils/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="509ba57f0af758518d866ee891b680e80106a47a">
+        <dex dex="/Users/bright/Documents/Brights Folder/dev/APP_DEVELOPMENT/ANDROID_2/WORK_SPACES/GITEXAMPLES/BrightsMVPTutorial/presentationlayer/build/intermediates/transforms/dex/androidTest/debugForTesting/folders/1000/4/classes_b71cd1d0f10c9b7a4fff315e9cd43306f07ceffc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/bright/Documents/Brights Folder/dev/APP_DEVELOPMENT/ANDROID_2/WORK_SPACES/GITEXAMPLES/BrightsMVPTutorial/models/build/libs/models.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="88418ee440fdd52ac0c3c82d2b48b7e5bd66a9ef">
+        <dex dex="/Users/bright/Documents/Brights Folder/dev/APP_DEVELOPMENT/ANDROID_2/WORK_SPACES/GITEXAMPLES/BrightsMVPTutorial/presentationlayer/build/intermediates/transforms/dex/debugForTesting/folders/1000/4/models_e25629d8fc9e2bceb85afdd2f340d4ac9d984134/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/bright/Documents/Brights Folder/dev/APP_DEVELOPMENT/ANDROID_2/WORK_SPACES/GITEXAMPLES/BrightsMVPTutorial/datalayer/build/intermediates/bundles/debug/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="22f1f4c23bf327cbf605535ec8b13a5c13afade3">
+        <dex dex="/Users/bright/Documents/Brights Folder/dev/APP_DEVELOPMENT/ANDROID_2/WORK_SPACES/GITEXAMPLES/BrightsMVPTutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/4/classes_8781eb27da6b2e911891a993f0816f01eb9556f8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/bright/Documents/Brights Folder/dev/APP_DEVELOPMENT/ANDROID_2/WORK_SPACES/GITEXAMPLES/BrightsMVPTutorial/domainlayer/build/intermediates/bundles/debug/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="019eb09fe031236f608f7c1c450ce0b73f3e6338">
+        <dex dex="/Users/bright/Documents/Brights Folder/dev/APP_DEVELOPMENT/ANDROID_2/WORK_SPACES/GITEXAMPLES/BrightsMVPTutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/4/classes_c36d5c1d38587d654c305d476aa10bc31e1f23b4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/bright/Documents/Brights Folder/dev/APP_DEVELOPMENT/ANDROID_2/WORK_SPACES/GITEXAMPLES/BrightsMVPTutorial/domainlayer/build/intermediates/bundles/debugForTesting/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c8428f3325e4d721e53d9c461428648267c7c203">
+        <dex dex="/Users/bright/Documents/Brights Folder/dev/APP_DEVELOPMENT/ANDROID_2/WORK_SPACES/GITEXAMPLES/BrightsMVPTutorial/presentationlayer/build/intermediates/transforms/dex/debugForTesting/folders/1000/4/classes_09924211ff1c7dcada10df6750ef7efe4dbb796e/classes.dex" />
+    </item>
+
+</items>
