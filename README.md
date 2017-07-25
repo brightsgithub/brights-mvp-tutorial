@@ -1,4 +1,5 @@
 Bright’s Clean Architecture MVP/RXAndroid/Dagger2 Tutorial
+------------------------------------------------------------
 
 This is a simple application that accesses an API to display:
 
