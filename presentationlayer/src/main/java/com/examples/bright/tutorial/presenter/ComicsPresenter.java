@@ -15,7 +15,7 @@ import rx.Subscriber;
  * Created by bright on 17/07/2017.
  */
 
-public class ComicsPresenter {
+public class ComicsPresenter implements IComicPresenter{
 
     private ComicsView view;
     private GetComicsInteractor getComicsInteractor;
@@ -29,6 +29,11 @@ public class ComicsPresenter {
         this.view = view;
     }
 
+    /**
+     * The purpose of this method is to load comics bassed on the given limit of records.
+     * @param limit limit of records that can be returned.
+     */
+    @Override
     public void loadComics(final int limit) {
         view.hideComicsList();
         view.hideErrorView();

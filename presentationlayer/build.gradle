@@ -1,6 +1,7 @@
 buildscript {
     repositories {
         mavenCentral()
+        jcenter { url "http://jcenter.bintray.com/"}
     }
     dependencies {
         // https://github.com/evant/gradle-retrolambda

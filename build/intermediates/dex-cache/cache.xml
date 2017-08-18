@@ -3,57 +3,354 @@
 
     <item
         is-multidex="true"
-        jar="/Users/bright/Documents/Brights Folder/dev/APP_DEVELOPMENT/ANDROID_2/WORK_SPACES/GITEXAMPLES/BrightsMVPTutorial/datalayer/build/intermediates/bundles/debugForTesting/classes.jar"
-        jumboMode="false"
+        jar="/Users/brightowusu/.gradle/caches/modules-2/files-2.1/com.google.dagger/dagger/2.11/95037eaee68aa48021511972e9db9ba29916e1c9/dagger-2.11.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="a6fe2b88c2fe2a9ff3583e613a0ea1f638296c9d">
-        <dex dex="/Users/bright/Documents/Brights Folder/dev/APP_DEVELOPMENT/ANDROID_2/WORK_SPACES/GITEXAMPLES/BrightsMVPTutorial/presentationlayer/build/intermediates/transforms/dex/debugForTesting/folders/1000/4/classes_cdbdbc361594dea05781d532963f67311bbffa09/classes.dex" />
+        sha1="95037eaee68aa48021511972e9db9ba29916e1c9">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/dagger-2.11_ca0a8cc5fdd970d5833fd1d32e42dc13ba42c370/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/bright/Documents/Brights Folder/dev/APP_DEVELOPMENT/ANDROID_2/WORK_SPACES/GITEXAMPLES/BrightsMVPTutorial/testutils/build/intermediates/bundles/default/classes.jar"
-        jumboMode="false"
+        jar="/Users/brightowusu/.android/build-cache/3014b346bcbe11ffce7bb6dc39b3698e897250fe/output/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="509ba57f0af758518d866ee891b680e80106a47a">
-        <dex dex="/Users/bright/Documents/Brights Folder/dev/APP_DEVELOPMENT/ANDROID_2/WORK_SPACES/GITEXAMPLES/BrightsMVPTutorial/presentationlayer/build/intermediates/transforms/dex/androidTest/debugForTesting/folders/1000/4/classes_b71cd1d0f10c9b7a4fff315e9cd43306f07ceffc/classes.dex" />
+        sha1="ffc09f4e5bdebe068e5101f587dadc42b60fbfe4">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2e7c31657c9a8a4999b51b91d5b19027c40d2c44/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/bright/Documents/Brights Folder/dev/APP_DEVELOPMENT/ANDROID_2/WORK_SPACES/GITEXAMPLES/BrightsMVPTutorial/models/build/libs/models.jar"
-        jumboMode="false"
+        jar="/Users/brightowusu/.android/build-cache/6ce0a299f0bb912cbc5be116073311c474cb31c9/output/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="88418ee440fdd52ac0c3c82d2b48b7e5bd66a9ef">
-        <dex dex="/Users/bright/Documents/Brights Folder/dev/APP_DEVELOPMENT/ANDROID_2/WORK_SPACES/GITEXAMPLES/BrightsMVPTutorial/presentationlayer/build/intermediates/transforms/dex/debugForTesting/folders/1000/4/models_e25629d8fc9e2bceb85afdd2f340d4ac9d984134/classes.dex" />
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_0a17730329bdb414070493cbd9595100bc1f543a/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/bright/Documents/Brights Folder/dev/APP_DEVELOPMENT/ANDROID_2/WORK_SPACES/GITEXAMPLES/BrightsMVPTutorial/datalayer/build/intermediates/bundles/debug/classes.jar"
-        jumboMode="false"
+        jar="/Users/brightowusu/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/adapter-rxjava/2.0.2/a60c039ba54c73d1133b72178e1b04133c73d13d/adapter-rxjava-2.0.2.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="22f1f4c23bf327cbf605535ec8b13a5c13afade3">
-        <dex dex="/Users/bright/Documents/Brights Folder/dev/APP_DEVELOPMENT/ANDROID_2/WORK_SPACES/GITEXAMPLES/BrightsMVPTutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/4/classes_8781eb27da6b2e911891a993f0816f01eb9556f8/classes.dex" />
+        sha1="a60c039ba54c73d1133b72178e1b04133c73d13d">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/adapter-rxjava-2.0.2_f87e8a2f37d771ad8c2cf87d6257a5537898b7e8/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/bright/Documents/Brights Folder/dev/APP_DEVELOPMENT/ANDROID_2/WORK_SPACES/GITEXAMPLES/BrightsMVPTutorial/domainlayer/build/intermediates/bundles/debug/classes.jar"
-        jumboMode="false"
+        jar="/Users/brightowusu/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.6.0/69edde9fc4b01c9fd51d25b83428837478c27254/okhttp-3.6.0.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="019eb09fe031236f608f7c1c450ce0b73f3e6338">
-        <dex dex="/Users/bright/Documents/Brights Folder/dev/APP_DEVELOPMENT/ANDROID_2/WORK_SPACES/GITEXAMPLES/BrightsMVPTutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/4/classes_c36d5c1d38587d654c305d476aa10bc31e1f23b4/classes.dex" />
+        sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.6.0_4ac152f15546fca430e5bebea62c95b89a6d86ca/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/bright/Documents/Brights Folder/dev/APP_DEVELOPMENT/ANDROID_2/WORK_SPACES/GITEXAMPLES/BrightsMVPTutorial/domainlayer/build/intermediates/bundles/debugForTesting/classes.jar"
-        jumboMode="false"
+        jar="/Users/brightowusu/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.11.0/840897fcd7223a8143f1d9b6f69714e7be34fd50/okio-1.11.0.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="c8428f3325e4d721e53d9c461428648267c7c203">
-        <dex dex="/Users/bright/Documents/Brights Folder/dev/APP_DEVELOPMENT/ANDROID_2/WORK_SPACES/GITEXAMPLES/BrightsMVPTutorial/presentationlayer/build/intermediates/transforms/dex/debugForTesting/folders/1000/4/classes_09924211ff1c7dcada10df6750ef7efe4dbb796e/classes.dex" />
+        sha1="840897fcd7223a8143f1d9b6f69714e7be34fd50">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.11.0_622864d9b860e03190123563c637dc92c7ffa4dd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.3.1_62f3a9ecad8f314fdd48b1311f7759e83db8658a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/logging-interceptor/3.6.0/81887458b69ddc32722df7e4c35235fd74e6a8ba/logging-interceptor-3.6.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="81887458b69ddc32722df7e4c35235fd74e6a8ba">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/logging-interceptor-3.6.0_8994a12889777321b65bc6326c2a48cf7a3d6b7a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.android/build-cache/b32e68277dd01c10bc6fe60ba0bdb17d0f16977b/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6459896f53db3f581eede133c69593179eb67ddf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.0.2/f8d87f15b94b8d74e7ccf61d7eedb558811cdb30/converter-gson-2.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="f8d87f15b94b8d74e7ccf61d7eedb558811cdb30">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/converter-gson-2.0.2_a36bafe1230908be9f6c06913f35f4c882353042/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.android/build-cache/15ea2bf4d3e82d9cb145bc454590322f534ee2b7/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b350558cc047ae212cabedec4db006cb3b7162c1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.android/build-cache/36731f057cc9d383b3bfb049fb4570d78050d298/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c3d20d6e9c4d54b214b29e1b695f2610cd8d3c8f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.android/build-cache/f53436d21b0ed36181a6c7dbafaee26be7d5103b/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1ac8a7a19de08afb3d35806528c714da16104833/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.android/build-cache/2773681ef4db11b0baa89476780de0d2803a6158/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_870411d09e6c6af2d2e183cb527223f1fa3010ab/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.android/build-cache/6c5b20c8de6cb9fcb6cf73a9c50a8d7f40e1b3ee/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d4c4b83de2f6412072d2a29b1b7a5b03edaad5ff">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_26eeccc266a401e12b63e69294ee5ca77d33d3bc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.5.2_d60a22689bff87afebce9b499dd4eb547948b4b3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/javax.inject-1_7e2e8256c36edc4b927f89718172915294ffc981/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.android/build-cache/e469d50809a8e36953e65c34d70cc4be6d737e97/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bd9f3b3ef0ddde7be206c06e7c47973fac74a968">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3045f563b3f3ef906098567b57b33ec4ed7ac445/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.android/build-cache/f91b032ab3d793ed033fd48f47edcdb2f1c0173f/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="be587097e648eabfb7f9eca23ab03369894e2d5d">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1054f2d466f717c7ffa005e0f64ab3ae664464fd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.android/build-cache/4b6dc1f396f6ae4b2d4632c8fae48d2b122f7cb7/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e7763682508066c7f8117999de1f4937038519ce">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1f21f5c74797f7e08c1199eb9c2d0f03ec94fcba/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.1.4/3cc424c6eda381bf4aee40dc3ccdecc27b2106aa/rxjava-1.1.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3cc424c6eda381bf4aee40dc3ccdecc27b2106aa">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/rxjava-1.1.4_7491a954387f3a7ecb66fd50077eedca0443674f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.0/14b8c877d98005ba3941c9257cfe09f6ed0e0d74/reactive-streams-1.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="14b8c877d98005ba3941c9257cfe09f6ed0e0d74">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/reactive-streams-1.0.0_c6f4463e655336d0df76a60e5b4b3f066fc3b7fc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.android/build-cache/513eb507268c00386d19ee93cbb0e16416c197ad/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_258f23f6b2f362797db035426100f07bf3fb6abe/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_2e16898a1d9e71c9306e15c390ba9a8aa4b03b77/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/Library/Android/sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.0.2_13c94416f85dc412ce7e2924258bb69547e8d665/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-annotations/8.6.0/48efa6f14074e1a6b16e02ac05eba3fc5c7c7ec8/butterknife-annotations-8.6.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="48efa6f14074e1a6b16e02ac05eba3fc5c7c7ec8">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/butterknife-annotations-8.6.0_87472a421863e8d0e2a16bb04d1f518d0f5d2314/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="f35d86c55d86f266d44071a3067c460fa73c6e56">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_eb6a008ccff23746ce6d748a4587244671cbcca3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxjava/2.1.0/2fdf84dedcaaeabb9d70cde9dbb8aad4eccb80a1/rxjava-2.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2fdf84dedcaaeabb9d70cde9dbb8aad4eccb80a1">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/rxjava-2.1.0_fac6153c3c347b054bf20bc6d3f51bb161d2a693/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.android/build-cache/1a29a81dbe17af103a79460b6df18f458d606e04/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="36d44cdc9dcb63fa4726f6e9edf4e01204bd2afe">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4c993779c5a5fb967aa64592f32900df391daab5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.android/build-cache/25233161f5bff5018a4d83f1a48199c918341aec/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_04bf00e9b116da304c0600c9d01e4e88614120c7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.android/build-cache/e734a68a88c42b13194ef0d39f9c3bf99bb68154/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4119ea97a7191ff9b8f33b534ea220448f62f491">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_032f178ad45e51c4db4280fb93107fad8e890689/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/751f548c85fa49f330cecbb1875893f971b33c4e/gson-2.7.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.7_3ff6e0c87bef541cf15c37528410dab36b4a02ef/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.android/build-cache/ee9d340bf8eaea3d3f45806f1694628d41b13898/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_afc77ddbc927aa637b63576e575daacd6a48c962/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.android/build-cache/2aa27b89031ea779abccf30419997165ccfd68cd/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5072377c4ee671100002214419e93b7e542a24f5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.0.2/43eeae0b9fb087bb3194ba59ab63a38a32fbf3e/retrofit-2.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="043eeae0b9fb087bb3194ba59ab63a38a32fbf3e">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-2.0.2_acb9ab1a3d261c5559151588269ef69898d85d8b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.android/build-cache/272ffe9293186ba980c34b0a80b677f939f4e1b3/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_42849226e22fbfa93e6c8d1be91363aa3c8ef486/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.android/build-cache/325852d97b7640fa570da52557c6d693c8f64f5d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e6e5cb683c74a95072d8fbf47a997e64546fc284">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_7b46efcf4134fda1fed6b0eca1c9782370a51b37/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.android/build-cache/763056a7ed16170db565d17c6de1c26e40a709df/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d5f0418fcf44f54ffa5ca418cdba3bd8c88caeae/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brightowusu/.android/build-cache/d2730d8b19ef58c91d9a833486d26bc90b72dd49/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
+        <dex dex="/Users/brightowusu/Documents/dev/android/brights-mvp-tutorial/presentationlayer/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e702fc96a36fd5d4e94c9a1edb8f3c67d1973e4c/classes.dex" />
     </item>
 
 </items>
