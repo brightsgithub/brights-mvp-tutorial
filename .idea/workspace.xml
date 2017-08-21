@@ -61,8 +61,8 @@
       <file leaf-file-name="ComicsPresenter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/presentationlayer/src/main/java/com/examples/bright/tutorial/presenter/ComicsPresenter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="224">
+              <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -5922,8 +5922,8 @@
         <option value="$PROJECT_DIR$/datalayer/.gitignore" />
         <option value="$PROJECT_DIR$/testutils/.gitignore" />
         <option value="$PROJECT_DIR$/presentationlayer/build.gradle" />
-        <option value="$PROJECT_DIR$/presentationlayer/src/main/java/com/examples/bright/tutorial/presenter/ComicsPresenter.java" />
         <option value="$PROJECT_DIR$/presentationlayer/src/main/java/com/examples/bright/tutorial/presenter/IComicPresenter.java" />
+        <option value="$PROJECT_DIR$/presentationlayer/src/main/java/com/examples/bright/tutorial/presenter/ComicsPresenter.java" />
       </list>
     </option>
   </component>
@@ -6793,8 +6793,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/presentationlayer/src/main/java/com/examples/bright/tutorial/presenter/ComicsPresenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="224">
+          <caret line="21" column="55" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
           <folding />
         </state>
       </provider>
