@@ -1,8 +1,8 @@
 package com.examples.bright.tutorial.di.modules;
 
-import com.examples.bright.tutorial.datalayer.comics.ComicsService;
+import com.examples.bright.tutorial.domainlayer.abstractions.repository.IComicRepository;
 import com.examples.bright.tutorial.domainlayer.interactors.comics.GetComicDetailInteractor;
-import com.examples.bright.tutorial.domainlayer.interactors.comics.GetComicsInteractor;
+import com.examples.bright.tutorial.domainlayer.interactors.comics.IGetComicsUseCase;
 import com.examples.bright.tutorial.domainlayer.interactors.comics.GetComicDetailUseCase;
 import com.examples.bright.tutorial.domainlayer.interactors.comics.GetComicsUseCase;
 
@@ -14,18 +14,18 @@ import dagger.Provides;
  * within their own module since any component in future may want to use them.
  * Created by bright on 17/07/2017.
  */
-
 @Module
 public class InteractorsModule {
 
     /**
      * Since this
-     * @param comicsService
+     * @param comicRepository
      * @return
      */
     @Provides
-    public GetComicsInteractor providesGetComicInteractor(ComicsService comicsService) {
-        return new GetComicsUseCase(comicsService);
+    public IGetComicsUseCase providesGetComicInteractor(
+            final IComicRepository comicRepository) {
+        return new GetComicsUseCase(comicRepository);
     }
 
     @Provides

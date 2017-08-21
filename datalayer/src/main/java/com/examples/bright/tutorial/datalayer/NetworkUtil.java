@@ -3,13 +3,11 @@ package com.examples.bright.tutorial.datalayer;
 import android.content.Context;
 import android.util.Log;
 
-import com.examples.bright.tutorial.models.comic.ResultComicEntity;
-import com.examples.bright.tutorial.models.common.DataEntity;
-import com.examples.bright.tutorial.models.gson.ComicsDeserializer;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import java.io.File;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.Cache;
 import okhttp3.OkHttpClient;
@@ -42,9 +40,17 @@ public class NetworkUtil {
         if (BuildConfig.BUILD_TYPE.equals("debugForTesting")) {
             client  = new OkHttpClient.Builder(); // NO CACHE
         } else {
-            client  = new OkHttpClient.Builder().cache(cache);
+            client  = new OkHttpClient
+                    .Builder()
+                    .connectTimeout(30, TimeUnit.SECONDS)
+                    .readTimeout(30, TimeUnit.SECONDS)
+                    .writeTimeout(30, TimeUnit.SECONDS)
+                    .cache(cache);
             addCachingInterceptor(client, 86400); // 86400 in secs = 1 Day
+                                                  // Bit redundant since we now have single source
+                                                  // of truth since we are storing in the DB :-)
         }
+
 
         client.interceptors().add(httpLoggingInterceptor);
         client.interceptors().add(networkInterceptor);
@@ -114,9 +120,10 @@ public class NetworkUtil {
      * @return
      */
     public static Gson gson() {
-        GsonBuilder gsonBuilder = new GsonBuilder()
-                .registerTypeAdapter(DataEntity.class,
-                        new ComicsDeserializer<>(ResultComicEntity.class, "results"));
+//        GsonBuilder gsonBuilder = new GsonBuilder()
+//                .registerTypeAdapter(DataEntity.class,
+//                        new ComicsDeserializer<>(ResultComicEntity.class, "results"));
+        GsonBuilder gsonBuilder = new GsonBuilder();
         return gsonBuilder.create();
     }
 

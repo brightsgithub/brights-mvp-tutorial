@@ -1,8 +1,6 @@
 package com.examples.bright.tutorial.domainlayer.interactors.comics;
 
-import com.examples.bright.tutorial.datalayer.comics.ComicsService;
-import com.examples.bright.tutorial.domainlayer.interactors.UseCase;
-import com.examples.bright.tutorial.domainlayer.mappers.ComicMapper;
+import com.examples.bright.tutorial.domainlayer.abstractions.repository.IComicRepository;
 import com.examples.bright.tutorial.domainlayer.model.Comic;
 
 import java.util.List;
@@ -13,20 +11,21 @@ import rx.Observable;
  * Created by bright on 17/07/2017.
  */
 
-public class GetComicsUseCase extends UseCase implements GetComicsInteractor {
+public class GetComicsUseCase implements IGetComicsUseCase {
 
-    private final ComicsService comicsService;
+    private final static int NO_VAL = -100;
+    private int limit = NO_VAL;
+    private final IComicRepository comicRepository;
 
-    public GetComicsUseCase(final ComicsService comicsService) {
-        this.comicsService = comicsService;
+
+    public GetComicsUseCase(
+            final IComicRepository comicRepository) {
+        this.comicRepository = comicRepository;
     }
 
     @Override
-    public Observable<List<Comic>> getComics(final int limit) {
-        return comicsService.getComics(limit)
-                .map(ComicMapper::transformComics)
-                .map(comics -> checkOurLimitMatchesOurReturnedResults(limit, comics))
-                .compose(applySchedulers());
+    public void setLimit(int limit) {
+        this.limit = limit;
     }
 
     private static List<Comic> checkOurLimitMatchesOurReturnedResults(
@@ -38,5 +37,15 @@ public class GetComicsUseCase extends UseCase implements GetComicsInteractor {
                     "records but, the actual returned records was " + size);
         }
         return comics;
+    }
+
+    @Override
+    public Observable<List<Comic>> execute() {
+        if(limit == NO_VAL) {
+            throw new IllegalStateException("limit needs to be set");
+        }
+
+        return comicRepository.getComics(limit)
+                .map(comics -> checkOurLimitMatchesOurReturnedResults(limit, comics));
     }
 }

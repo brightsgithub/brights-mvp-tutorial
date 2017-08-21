@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.examples.bright.tutorial.R;
 import com.examples.bright.tutorial.domainlayer.model.Comic;
+import com.examples.bright.tutorial.models.UIComic;
 import com.examples.bright.tutorial.view.OnItemClickListener;
 import com.squareup.picasso.Picasso;
 
@@ -24,10 +25,10 @@ import butterknife.ButterKnife;
 
 public class ComicsAdaptor extends RecyclerView.Adapter<ComicsAdaptor.ComicViewHolder> {
 
-    private OnItemClickListener<Comic> itemClickListener;
-    private List<Comic> items;
+    private OnItemClickListener<UIComic> itemClickListener;
+    private List<UIComic> items;
 
-    public ComicsAdaptor(final List<Comic> items) {
+    public ComicsAdaptor(final List<UIComic> items) {
         this.items = items;
     }
 
@@ -40,25 +41,25 @@ public class ComicsAdaptor extends RecyclerView.Adapter<ComicsAdaptor.ComicViewH
     }
 
     public void setOnItemClickListener(
-            final OnItemClickListener<Comic> onItemClickListener) {
+            final OnItemClickListener<UIComic> onItemClickListener) {
         this.itemClickListener = onItemClickListener;
     }
 
     @Override
     public void onBindViewHolder(ComicViewHolder viewHolder, int position) {
-        final Comic item = items.get(position);
+        final UIComic item = items.get(position);
         populateRow(viewHolder, item, position);
         initOnClickListener(viewHolder, item);
     }
 
-    private void populateRow(ComicViewHolder viewHolder, Comic item, int position) {
+    private void populateRow(ComicViewHolder viewHolder, UIComic item, int position) {
         viewHolder.title.setText(item.getTitle());
         viewHolder.rowNumber.setText(String.valueOf((position+1)));
         final Context context = viewHolder.thumbnail.getContext();
         Picasso.with(context).load(item.getThumbnail()).into(viewHolder.thumbnail);
     }
 
-    private void initOnClickListener(final ComicViewHolder viewHolder, final Comic comic) {
+    private void initOnClickListener(final ComicViewHolder viewHolder, final UIComic comic) {
         if (itemClickListener != null) {
             viewHolder.itemView.setOnClickListener(v -> itemClickListener.onItemClick(comic));
         }

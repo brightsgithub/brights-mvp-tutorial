@@ -13,6 +13,12 @@ import android.view.View;
 
 import com.examples.bright.tutorial.IdlingSupport;
 import com.examples.bright.tutorial.R;
+import com.examples.bright.tutorial.datalayer.DatabaseUtil;
+import com.examples.bright.tutorial.datalayer.NetworkUtil;
+import com.examples.bright.tutorial.datalayer.comics.ComicDatabaseHelper;
+import com.examples.bright.tutorial.datalayer.comics.ComicRepository;
+import com.examples.bright.tutorial.datalayer.comics.ComicsService;
+import com.examples.bright.tutorial.datalayer.models.comic.DaoSession;
 import com.examples.bright.tutorial.testutils.FakeServer;
 import com.examples.bright.tutorial.testutils.MyTestRule;
 import com.examples.bright.tutorial.view.comics.ComicDetailActivity;
@@ -49,18 +55,27 @@ public class ComicsActivityEspressoTest extends FakeServer {
             new MyTestRule<>(ComicsActivity.class, false, false);
 
     private Context testContext;
-
+    private ComicDatabaseHelper comicDatabaseHelper;
     @Before
     public void init() {
         testContext = InstrumentationRegistry.getTargetContext();
         // We are doing a UI test, not against the real data, as any network issue can occur
         // but what we will do instead is use our fake server.
         useFakeServer();
+
+        ComicsService comicsService = NetworkUtil.getConfiguredRetrofit(testContext).create(ComicsService.class);
+
+        DaoSession daoSession = DatabaseUtil.getConfiguredDatabaseSession(testContext);
+        comicDatabaseHelper = new ComicDatabaseHelper(daoSession);
+        ComicRepository comicRepository = new ComicRepository(comicsService, comicDatabaseHelper);
+
+        comicDatabaseHelper.clearDB();
     }
 
     @After
     public void cleanUp() {
         performCleanUp();
+        comicDatabaseHelper.clearDB();
     }
 
     @Test

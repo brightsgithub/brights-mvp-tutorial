@@ -1,13 +1,10 @@
 package com.examples.bright.tutorial.domainlayer.model;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 /**
  * Created by bright on 18/07/2017.
  */
 
-public class Authour implements Parcelable {
+public class Authour {
 
     private String resourceURI;
     private String name;
@@ -49,38 +46,4 @@ public class Authour implements Parcelable {
                 ", role='" + role + '\'' +
                 '}';
     }
-
-    // Parcelable ##################################################################################
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    protected Authour(final Parcel in) {
-        this.resourceURI = in.readString();
-        this.name = in.readString();
-        this.role = in.readString();
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(this.resourceURI);
-        dest.writeString(this.name);
-        dest.writeString(this.role);
-    }
-
-    public static final Parcelable.Creator<Authour>
-            CREATOR = new Parcelable.Creator<Authour>() {
-        @Override
-        public Authour createFromParcel(final Parcel source) {
-            return new Authour(source);
-        }
-
-        @Override
-        public Authour[] newArray(final int size) {
-            return new Authour[size];
-        }
-    };
-    // Parcelable  End #############################################################################
-
 }

@@ -5,11 +5,18 @@ import android.content.Intent;
 import android.support.test.InstrumentationRegistry;
 
 import com.examples.bright.tutorial.R;
+import com.examples.bright.tutorial.datalayer.DatabaseUtil;
 import com.examples.bright.tutorial.datalayer.NetworkUtil;
+import com.examples.bright.tutorial.datalayer.comics.ComicDatabaseHelper;
+import com.examples.bright.tutorial.datalayer.comics.ComicRepository;
 import com.examples.bright.tutorial.datalayer.comics.ComicsService;
-import com.examples.bright.tutorial.domainlayer.interactors.comics.GetComicsInteractor;
+import com.examples.bright.tutorial.datalayer.models.comic.DaoSession;
+import com.examples.bright.tutorial.domainlayer.interactors.comics.IGetComicsUseCase;
 import com.examples.bright.tutorial.domainlayer.interactors.comics.GetComicsUseCase;
 import com.examples.bright.tutorial.domainlayer.model.Comic;
+
+import com.examples.bright.tutorial.mappers.MapDomainComicToUI;
+import com.examples.bright.tutorial.models.UIComic;
 import com.examples.bright.tutorial.testutils.FakeServer;
 import com.examples.bright.tutorial.testutils.MyTestRule;
 import com.examples.bright.tutorial.view.comics.ComicDetailActivity;
@@ -45,7 +52,9 @@ public class ComicDetailActivityEspressoTest extends FakeServer {
 
     private Context testContext;
     private ComicsService comicsService;
-
+    private DaoSession daoSession;
+    private ComicDatabaseHelper comicDatabaseHelper;
+    private ComicRepository comicRepository;
     @Before
     public void init() {
         testContext = InstrumentationRegistry.getTargetContext();
@@ -53,17 +62,24 @@ public class ComicDetailActivityEspressoTest extends FakeServer {
         // but what we will do instead is use our fake server.
         useFakeServer();
         comicsService = NetworkUtil.getConfiguredRetrofit(testContext).create(ComicsService.class);
+
+        daoSession = DatabaseUtil.getConfiguredDatabaseSession(testContext);
+        comicDatabaseHelper = new ComicDatabaseHelper(daoSession);
+        comicRepository = new ComicRepository(comicsService, comicDatabaseHelper);
+
+        comicDatabaseHelper.clearDB();
     }
 
     @After
     public void cleanUp() {
         performCleanUp();
+        comicDatabaseHelper.clearDB();
     }
 
     @Test
     public void show_comic_detail_view() throws Exception {
         ComicsActivity.LIMIT_OF_COMICS_RECORDS_TO_REQUEST = 10;
-        final Comic comic = getComic();
+        final UIComic comic = getComic();
         final String title = comic.getTitle();
         final Intent i = new Intent(testContext, ComicDetailActivity.class);
         i.putExtra(ComicDetailActivity.EXTRA_COMIC, comic);
@@ -76,7 +92,7 @@ public class ComicDetailActivityEspressoTest extends FakeServer {
     @Test
     public void show_empty_error_comic_detail_view() throws Exception {
         ComicsActivity.LIMIT_OF_COMICS_RECORDS_TO_REQUEST = 10;
-        final Comic comic = null;
+        final UIComic comic = null;
         final Intent i = new Intent(testContext, ComicDetailActivity.class);
         i.putExtra(ComicDetailActivity.EXTRA_COMIC, comic);
         mActivityRule.launchActivity(i);
@@ -88,18 +104,20 @@ public class ComicDetailActivityEspressoTest extends FakeServer {
      * Get a real comic (from fake server) object so we can really test against.
      * @return
      */
-    private Comic getComic() {
+    private UIComic getComic() {
 
-        GetComicsInteractor getComicsInteractor = new GetComicsUseCase(comicsService);
+        IGetComicsUseCase getComicsUseCase = new GetComicsUseCase(comicRepository);
         final int recordsRequested = 10;
         final TestSubscriber<List<Comic>> testSubscriber = TestSubscriber.create();
-        getComicsInteractor.getComics(recordsRequested).subscribe(testSubscriber);
+        getComicsUseCase.setLimit(recordsRequested);
+        getComicsUseCase.execute().subscribe(testSubscriber);
 
         testSubscriber.awaitTerminalEvent();
 
         final List<List<Comic>> onNextEvents = testSubscriber.getOnNextEvents();
 
         final List<Comic> comics = onNextEvents.get(0);
-        return comics.get(2);
+        ;
+        return MapDomainComicToUI.transform(comics).get(2);
     }
 }

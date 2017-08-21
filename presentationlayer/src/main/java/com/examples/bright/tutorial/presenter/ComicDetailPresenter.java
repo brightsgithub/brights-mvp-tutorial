@@ -4,6 +4,9 @@ import com.examples.bright.tutorial.domainlayer.interactors.comics.GetComicDetai
 import com.examples.bright.tutorial.domainlayer.model.Authour;
 import com.examples.bright.tutorial.domainlayer.model.Comic;
 import com.examples.bright.tutorial.domainlayer.model.Price;
+import com.examples.bright.tutorial.mappers.MapUIComicToDomain;
+import com.examples.bright.tutorial.models.UIComic;
+import com.examples.bright.tutorial.utils.ISchedulerUtils;
 import com.examples.bright.tutorial.view.comics.ComicDetailView;
 
 import java.util.List;
@@ -20,7 +23,9 @@ public class ComicDetailPresenter {
     private ComicDetailView view;
     private GetComicDetailInteractor getComicDetailInteractor;
 
-    public ComicDetailPresenter(final GetComicDetailInteractor getComicDetailInteractor) {
+    public ComicDetailPresenter(
+            final GetComicDetailInteractor getComicDetailInteractor,
+            final ISchedulerUtils iSchedulerUtils) {
         this.getComicDetailInteractor = getComicDetailInteractor;
     }
 
@@ -28,12 +33,12 @@ public class ComicDetailPresenter {
         this.view = view;
     }
 
-    public void loadComicDetail(final Comic comic) {
+    public void loadComicDetail(final UIComic comic) {
         view.hideDetailView();
         view.hideErrorView();
         view.showLoadingState();
-        Observable<Comic> comicObservable = getComicDetailInteractor.getComicDetail(comic);
-        comicObservable.subscribe(new Subscriber<Comic>() {
+        getComicDetailInteractor.setComic(MapUIComicToDomain.transform(comic));
+        getComicDetailInteractor.execute().subscribe(new Subscriber<Comic>() {
 
             @Override
             public void onNext(final Comic comic) {

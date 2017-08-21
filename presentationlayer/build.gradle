@@ -14,6 +14,13 @@ apply plugin: 'com.android.application'
 apply plugin: 'me.tatarka.retrolambda' // so we can use Lambdas
 
 android {
+
+
+    // http://tools.android.com/tech-docs/unit-testing-support#TOC-Method-...-not-mocked.-
+//    testOptions {
+//        unitTests.returnDefaultValues = true
+//    }
+
     // You can do testing on a different build variant; but only on one! The default is debug.
     // Because we are using a different classes from our normal debug variant to test we use
     // debugForTesting. debug will function as normal i.e. it will call the real server when
@@ -83,6 +90,11 @@ dependencies {
     releaseCompile project(path: ':domainlayer', configuration: "release")
     debugForTestingCompile project(path: ':domainlayer', configuration: "debugForTesting")
 
+    debugCompile project(path: ':datalayer', configuration: "debug")
+    releaseCompile project(path: ':datalayer', configuration: "release")
+    debugForTestingCompile project(path: ':datalayer', configuration: "debugForTesting")
+
+
     // Android
      compile 'com.android.support:cardview-v7:25.3.1'
      compile 'com.android.support:appcompat-v7:25.3.1'
@@ -113,4 +125,7 @@ dependencies {
 
     // 64k Method limit (https://developer.android.com/studio/build/multidex.html)
     compile 'com.android.support:multidex:1.0.1'
+
+
+    compile 'com.facebook.stetho:stetho:1.5.0'
 }

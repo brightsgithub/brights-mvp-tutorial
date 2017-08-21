@@ -1,16 +1,21 @@
 buildscript {
     repositories {
+        jcenter()
         mavenCentral()
     }
     dependencies {
         // https://github.com/evant/gradle-retrolambda
         // A gradle plugin for getting java lambda support in java 6, 7 and android
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2'
         classpath 'me.tatarka:gradle-retrolambda:3.3.0-beta4'
+
     }
 }
 
+apply plugin: 'org.greenrobot.greendao'
 apply plugin: 'com.android.library'
 apply plugin: 'me.tatarka.retrolambda' // so we can use Lambdas
+
 
 android {
     // You can do testing on a different build variant; but only on one! The default is debug.
@@ -67,11 +72,19 @@ android {
     }
 }
 
-
+greendao {
+    schemaVersion 2
+}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile project(':models')
+
+//    compile project(':domainlayer')
+
+    debugCompile project(path: ':domainlayer', configuration: "debug")
+    releaseCompile project(path: ':domainlayer', configuration: "release")
+    debugForTestingCompile project(path: ':domainlayer', configuration: "debugForTesting")
+
 
     // Needed for instumented tests to Run!
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -112,5 +125,9 @@ dependencies {
     // 64k Method limit (https://developer.android.com/studio/build/multidex.html)
     compile 'com.android.support:multidex:1.0.1'
 
+    // Green DAO
+    compile 'org.greenrobot:greendao:3.2.2'
 
+    // GSON
+    compile 'com.google.code.gson:gson:2.7'
 }

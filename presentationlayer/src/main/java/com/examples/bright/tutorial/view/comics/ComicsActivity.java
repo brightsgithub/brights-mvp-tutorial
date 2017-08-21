@@ -11,6 +11,7 @@ import com.examples.bright.tutorial.R;
 import com.examples.bright.tutorial.di.components.DaggerComicsScreenComponent;
 import com.examples.bright.tutorial.di.modules.ComicsScreenModule;
 import com.examples.bright.tutorial.domainlayer.model.Comic;
+import com.examples.bright.tutorial.models.UIComic;
 import com.examples.bright.tutorial.presenter.ComicsPresenter;
 import com.examples.bright.tutorial.view.BaseActivity;
 import com.examples.bright.tutorial.view.OnItemClickListener;
@@ -88,7 +89,7 @@ public class ComicsActivity extends BaseActivity implements ComicsView {
     @Override
     public void initDependencies() {
         DaggerComicsScreenComponent.builder()
-                .serviceAPIComponent(MyApplication.get().getServiceAPIComponent())
+                .comicsRepositoryComponent(MyApplication.get().getComicsRepositoryComponent())
                 .comicsScreenModule(new ComicsScreenModule())
                 .build().inject(this);
     }
@@ -98,12 +99,12 @@ public class ComicsActivity extends BaseActivity implements ComicsView {
         comicsPresenter.setView(this);
     }
 
-    protected final OnItemClickListener<Comic> itemClickListener = comic -> {
+    protected final OnItemClickListener<UIComic> itemClickListener = comic -> {
         comicsPresenter.onComicClicked(comic);
     };
 
     @Override
-    public void onComicsLoaded(final List<Comic> comics) {
+    public void onComicsLoaded(final List<UIComic> comics) {
         final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
@@ -117,7 +118,7 @@ public class ComicsActivity extends BaseActivity implements ComicsView {
     }
 
     @Override
-    public void showComicDetailView(Comic comic) {
+    public void showComicDetailView(UIComic comic) {
         // Should use a navigator
         ComicDetailActivity.create(this,comic);
     }

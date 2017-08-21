@@ -5,7 +5,7 @@ import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.examples.bright.tutorial.datalayer.NetworkUtil;
-import com.examples.bright.tutorial.models.common.MarvelWrapper;
+import com.examples.bright.tutorial.datalayer.models.common.MarvelWrapper;
 import com.examples.bright.tutorial.testutils.FakeServer;
 
 import org.junit.After;

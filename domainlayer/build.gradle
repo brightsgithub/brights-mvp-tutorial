@@ -72,12 +72,12 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    //compile project(':datalayer') // bad since it will build the release variant
 
     // When we change one variant, they will all be in sync. See publishNonDefault true above
-    debugCompile project(path: ':datalayer', configuration: "debug")
-    releaseCompile project(path: ':datalayer', configuration: "release")
-    debugForTestingCompile project(path: ':datalayer', configuration: "debugForTesting")
+
+    compile group: 'io.reactivex', name: 'rxjava', version: '1.0.2'
+
+    compile 'io.reactivex:rxandroid:1.2.1' // extensions schedulers etc
 
     // Needed for instumented tests to Run!
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -90,4 +90,9 @@ dependencies {
 
     // 64k Method limit (https://developer.android.com/studio/build/multidex.html)
     compile 'com.android.support:multidex:1.0.1'
+
+    // Mockito runs on the local JVM not the device.
+    testCompile 'org.mockito:mockito-core:1.10.19'
+    androidTestCompile 'com.crittercism.dexmaker:dexmaker:1.4'
+    androidTestCompile 'com.crittercism.dexmaker:dexmaker-mockito:1.4'
 }

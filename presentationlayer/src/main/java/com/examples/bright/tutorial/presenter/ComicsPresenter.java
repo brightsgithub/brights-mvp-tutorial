@@ -1,12 +1,14 @@
 package com.examples.bright.tutorial.presenter;
 
-import com.examples.bright.tutorial.domainlayer.interactors.comics.GetComicsInteractor;
+import com.examples.bright.tutorial.domainlayer.interactors.comics.IGetComicsUseCase;
 import com.examples.bright.tutorial.domainlayer.model.Comic;
+import com.examples.bright.tutorial.mappers.MapDomainComicToUI;
+import com.examples.bright.tutorial.models.UIComic;
+import com.examples.bright.tutorial.utils.ISchedulerUtils;
 import com.examples.bright.tutorial.view.comics.ComicsView;
 
 import java.util.List;
 
-import rx.Observable;
 import rx.Subscriber;
 
 /**
@@ -15,14 +17,18 @@ import rx.Subscriber;
  * Created by bright on 17/07/2017.
  */
 
-public class ComicsPresenter implements IComicPresenter{
+public class ComicsPresenter implements IComicPresenter {
 
     private ComicsView view;
-    private GetComicsInteractor getComicsInteractor;
+    private IGetComicsUseCase getComicsUseCase;
     private static final String TAG = "ComicsPresenter";
+    private final ISchedulerUtils schedulerUtils;
 
-    public ComicsPresenter(final GetComicsInteractor getComicsInteractor) {
-        this.getComicsInteractor = getComicsInteractor;
+    public ComicsPresenter(
+            final IGetComicsUseCase IGetComicsUseCase,
+            final ISchedulerUtils schedulerUtils) {
+        this.getComicsUseCase = IGetComicsUseCase;
+        this.schedulerUtils = schedulerUtils;
     }
 
     public void setView(final ComicsView view) {
@@ -38,12 +44,16 @@ public class ComicsPresenter implements IComicPresenter{
         view.hideComicsList();
         view.hideErrorView();
         view.showLoadingState();
-        Observable<List<Comic>> comicObservable = getComicsInteractor.getComics(limit);
-        comicObservable.subscribe(new Subscriber<List<Comic>>() {
+        getComicsUseCase.setLimit(limit);
+        getComicsUseCase
+                .execute()
+                .compose(schedulerUtils.applySchedulers())
+        .subscribe(new Subscriber<List<Comic>>() {
 
             @Override
             public void onNext(final List<Comic> comics) {
-                view.onComicsLoaded(comics);
+                final List<UIComic> uiComics = MapDomainComicToUI.transform(comics);
+                view.onComicsLoaded(uiComics);
             }
 
             @Override
@@ -54,6 +64,7 @@ public class ComicsPresenter implements IComicPresenter{
 
             @Override
             public void onError(Throwable e) {
+                e.printStackTrace();
                 view.hideComicsList();
                 view.hideLoadingState();
                 view.showErrorView("some user friendly error message");
@@ -61,7 +72,7 @@ public class ComicsPresenter implements IComicPresenter{
         });
     }
 
-    public void onComicClicked(final Comic comic) {
+    public void onComicClicked(final UIComic comic) {
         view.showComicDetailView(comic);
     }
 }

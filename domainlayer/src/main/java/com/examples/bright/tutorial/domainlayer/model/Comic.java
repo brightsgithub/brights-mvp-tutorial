@@ -1,18 +1,13 @@
 package com.examples.bright.tutorial.domainlayer.model;
-
-import android.os.Parcel;
-import android.os.Parcelable;
-
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by bright on 17/07/2017.
  */
 
-public class Comic implements Parcelable{
+public class Comic {
 
-    private int id; // always handy
+    private long id; // always handy
     private String title;
     private String description;
     private int pageCount;
@@ -24,11 +19,11 @@ public class Comic implements Parcelable{
 
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -92,51 +87,4 @@ public class Comic implements Parcelable{
                 ", authours=" + authours +
                 '}';
     }
-
-
-    // Parcelable ##################################################################################
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    protected Comic(final Parcel in) {
-        this.id = in.readInt();
-        this.title = in.readString();
-        this.description = in.readString();
-        this.pageCount = in.readInt();
-        this.thumbnail = in.readString();
-
-        prices = new ArrayList<Price>();
-        in.readList(prices, Price.class.getClassLoader());
-
-        authours = new ArrayList<Authour>();
-        in.readList(authours, Authour.class.getClassLoader());
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(this.id);
-        dest.writeString(this.title);
-        dest.writeString(this.description);
-        dest.writeInt(this.pageCount);
-        dest.writeString(this.thumbnail);
-        dest.writeList(prices);
-        dest.writeList(authours);
-    }
-
-    public static final Parcelable.Creator<Comic>
-            CREATOR = new Parcelable.Creator<Comic>() {
-        @Override
-        public Comic createFromParcel(final Parcel source) {
-            return new Comic(source);
-        }
-
-        @Override
-        public Comic[] newArray(final int size) {
-            return new Comic[size];
-        }
-    };
-    // Parcelable  End #############################################################################
-
 }

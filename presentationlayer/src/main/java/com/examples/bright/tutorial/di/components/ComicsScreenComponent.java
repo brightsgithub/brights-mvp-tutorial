@@ -3,6 +3,7 @@ package com.examples.bright.tutorial.di.components;
 import com.examples.bright.tutorial.di.modules.ActivityScope;
 import com.examples.bright.tutorial.di.modules.ComicsScreenModule;
 import com.examples.bright.tutorial.di.modules.InteractorsModule;
+import com.examples.bright.tutorial.di.modules.SchedulersModule;
 import com.examples.bright.tutorial.view.comics.ComicsActivity;
 
 import dagger.Component;
@@ -22,7 +23,7 @@ import dagger.Component;
  */
 @ActivityScope
 @Component(
-        dependencies = ServiceAPIComponent.class,
+        dependencies = ComicsRepositoryComponent.class,
         modules = {ComicsScreenModule.class, InteractorsModule.class}
         )
 

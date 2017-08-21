@@ -3,6 +3,7 @@ package com.examples.bright.tutorial.di.components;
 import com.examples.bright.tutorial.di.modules.ActivityScope;
 import com.examples.bright.tutorial.di.modules.ComicDetailScreenModule;
 import com.examples.bright.tutorial.di.modules.InteractorsModule;
+import com.examples.bright.tutorial.di.modules.SchedulersModule;
 import com.examples.bright.tutorial.view.comics.ComicDetailActivity;
 
 import dagger.Component;

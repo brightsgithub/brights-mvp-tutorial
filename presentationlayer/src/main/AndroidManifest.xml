@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name="com.examples.bright.tutorial.MyApplication">
+        android:name="com.examples.bright.tutorial.MyApplication"
+        >
         <activity android:name="com.examples.bright.tutorial.view.comics.ComicsActivity"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"

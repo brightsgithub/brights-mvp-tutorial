@@ -2,6 +2,7 @@ package com.examples.bright.tutorial.di.modules;
 
 import com.examples.bright.tutorial.domainlayer.interactors.comics.GetComicDetailInteractor;
 import com.examples.bright.tutorial.presenter.ComicDetailPresenter;
+import com.examples.bright.tutorial.utils.ISchedulerUtils;
 
 
 import dagger.Module;
@@ -14,7 +15,7 @@ import dagger.Provides;
  *
  * Created by bright on 17/07/2017.
  */
-@Module
+@Module(includes = {SchedulersModule.class})
 public class ComicDetailScreenModule {
 
     /**
@@ -25,7 +26,8 @@ public class ComicDetailScreenModule {
     @Provides
     @ActivityScope
     public ComicDetailPresenter providesComicDetailPresenter(
-            GetComicDetailInteractor getComicDetailInteractor) {
-        return new ComicDetailPresenter(getComicDetailInteractor);
+            GetComicDetailInteractor getComicDetailInteractor,
+            final ISchedulerUtils iSchedulerUtils) {
+        return new ComicDetailPresenter(getComicDetailInteractor, iSchedulerUtils);
     }
 }

@@ -1,8 +1,10 @@
 package com.examples.bright.tutorial.di.modules;
 
 import com.examples.bright.tutorial.di.components.ServiceAPIComponent;
-import com.examples.bright.tutorial.domainlayer.interactors.comics.GetComicsInteractor;
+import com.examples.bright.tutorial.domainlayer.abstractions.repository.IComicRepository;
+import com.examples.bright.tutorial.domainlayer.interactors.comics.IGetComicsUseCase;
 import com.examples.bright.tutorial.presenter.ComicsPresenter;
+import com.examples.bright.tutorial.utils.ISchedulerUtils;
 
 import dagger.Module;
 import dagger.Provides;
@@ -20,17 +22,19 @@ import dagger.Provides;
  * Created by bright on 17/07/2017.
  */
 
-@Module
+@Module(includes = {SchedulersModule.class})
 public class ComicsScreenModule {
 
     /**
      * Provides a Presenter
-     * @param getComicsInteractor
+     * @param IGetComicsUseCase
      * @return
      */
     @Provides
     @ActivityScope
-    public ComicsPresenter providesComicsPresenter(GetComicsInteractor getComicsInteractor) {
-        return new ComicsPresenter(getComicsInteractor);
+    public ComicsPresenter providesComicsPresenter(
+            final IGetComicsUseCase IGetComicsUseCase,
+            final ISchedulerUtils iSchedulerUtils) {
+        return new ComicsPresenter(IGetComicsUseCase, iSchedulerUtils);
     }
 }

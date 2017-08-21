@@ -10,6 +10,7 @@ import com.examples.bright.tutorial.R;
 import com.examples.bright.tutorial.di.components.DaggerComicScreenDetailComponent;
 import com.examples.bright.tutorial.di.modules.ComicDetailScreenModule;
 import com.examples.bright.tutorial.domainlayer.model.Comic;
+import com.examples.bright.tutorial.models.UIComic;
 import com.examples.bright.tutorial.presenter.ComicDetailPresenter;
 import com.examples.bright.tutorial.view.BaseActivity;
 
@@ -48,7 +49,7 @@ public class ComicDetailActivity extends BaseActivity implements ComicDetailView
     TextView authour;
 
 
-    public static void create(final Context context, final Comic comic) {
+    public static void create(final Context context, final UIComic comic) {
         final Intent i = new Intent(context, ComicDetailActivity.class);
         i.putExtra(EXTRA_COMIC, comic);
         context.startActivity(i);
@@ -66,7 +67,7 @@ public class ComicDetailActivity extends BaseActivity implements ComicDetailView
     }
 
     private void loadComicDetail() {
-        final Comic comic = getIntent().getParcelableExtra(EXTRA_COMIC);
+        final UIComic comic = getIntent().getParcelableExtra(EXTRA_COMIC);
         comicDetailPresenter.loadComicDetail(comic);
     }
 
