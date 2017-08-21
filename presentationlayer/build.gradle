@@ -113,4 +113,7 @@ dependencies {
 
     // 64k Method limit (https://developer.android.com/studio/build/multidex.html)
     compile 'com.android.support:multidex:1.0.1'
+
+
+    compile 'com.facebook.stetho:stetho:1.5.0'
 }

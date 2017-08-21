@@ -111,6 +111,4 @@ dependencies {
 
     // 64k Method limit (https://developer.android.com/studio/build/multidex.html)
     compile 'com.android.support:multidex:1.0.1'
-
-
 }

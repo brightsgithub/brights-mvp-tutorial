@@ -4,9 +4,13 @@ import android.content.Context;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 
+import com.examples.bright.tutorial.datalayer.DatabaseUtil;
 import com.examples.bright.tutorial.datalayer.NetworkUtil;
+import com.examples.bright.tutorial.datalayer.comics.ComicDatabaseHelper;
+import com.examples.bright.tutorial.datalayer.comics.ComicRepository;
 import com.examples.bright.tutorial.datalayer.comics.ComicsService;
 import com.examples.bright.tutorial.domainlayer.model.Comic;
+import com.examples.bright.tutorial.models.comic.DaoSession;
 import com.examples.bright.tutorial.testutils.FakeServer;
 
 import org.junit.After;
@@ -29,17 +33,22 @@ public class GetComicsInteractorTest extends FakeServer {
     private GetComicsInteractor getComicsInteractor;
     private ComicsService comicsService;
     private Context testContext;
+    private ComicDatabaseHelper comicDatabaseHelper;
 
     @Before
     public void init() {
         testContext = InstrumentationRegistry.getTargetContext();
         useFakeServer();
         comicsService = NetworkUtil.getConfiguredRetrofit(testContext).create(ComicsService.class);
-        getComicsInteractor = new GetComicsUseCase(comicsService);
+        DaoSession daoSession = DatabaseUtil.getConfiguredDatabaseSession(testContext);
+        comicDatabaseHelper = new ComicDatabaseHelper(daoSession);
+        ComicRepository comicRepository = new ComicRepository(comicsService, comicDatabaseHelper);
+        getComicsInteractor = new GetComicsUseCase(comicRepository);
     }
 
     @After
-    public void cleanUp(){
+    public void cleanUp() {
+        comicDatabaseHelper.clearDB();
         performCleanUp();
     }
 

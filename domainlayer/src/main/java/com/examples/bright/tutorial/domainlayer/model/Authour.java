@@ -69,8 +69,8 @@ public class Authour implements Parcelable {
         dest.writeString(this.role);
     }
 
-    public static final Parcelable.Creator<Authour>
-            CREATOR = new Parcelable.Creator<Authour>() {
+    public static final Creator<Authour>
+            CREATOR = new Creator<Authour>() {
         @Override
         public Authour createFromParcel(final Parcel source) {
             return new Authour(source);

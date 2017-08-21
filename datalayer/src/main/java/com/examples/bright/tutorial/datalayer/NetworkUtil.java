@@ -114,9 +114,10 @@ public class NetworkUtil {
      * @return
      */
     public static Gson gson() {
-        GsonBuilder gsonBuilder = new GsonBuilder()
-                .registerTypeAdapter(DataEntity.class,
-                        new ComicsDeserializer<>(ResultComicEntity.class, "results"));
+//        GsonBuilder gsonBuilder = new GsonBuilder()
+//                .registerTypeAdapter(DataEntity.class,
+//                        new ComicsDeserializer<>(ResultComicEntity.class, "results"));
+        GsonBuilder gsonBuilder = new GsonBuilder();
         return gsonBuilder.create();
     }
 

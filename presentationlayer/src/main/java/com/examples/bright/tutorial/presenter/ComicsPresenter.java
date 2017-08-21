@@ -54,6 +54,7 @@ public class ComicsPresenter implements IComicPresenter{
 
             @Override
             public void onError(Throwable e) {
+                e.printStackTrace();
                 view.hideComicsList();
                 view.hideLoadingState();
                 view.showErrorView("some user friendly error message");

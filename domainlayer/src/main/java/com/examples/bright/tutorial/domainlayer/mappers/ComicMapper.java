@@ -41,7 +41,7 @@ public class ComicMapper {
     }
 
     private static void populateComicDetail(final ResultComicEntity resultComicEntity, final Comic comic) {
-        comic.setId(resultComicEntity.getId());
+        comic.setId(resultComicEntity.getResultComicEntityId());
         comic.setTitle(resultComicEntity.getTitle());
         comic.setDescription(resultComicEntity.getDescription());
         comic.setPageCount(resultComicEntity.getPageCount());

@@ -31,30 +31,30 @@ import java.util.List;
  * Created by bright on 17/07/2017.
  */
 
-public class ComicsDeserializer<T> implements JsonDeserializer<DataEntity<T>> {
+public class ComicsDeserializer {//<T> implements JsonDeserializer<DataEntity<T>> {
 
-    private final Class<T> clazz;
-    private String mKey;
-
-    public ComicsDeserializer(Class<T> clazz, String key) {
-        this.clazz = clazz;
-        mKey = key;
-    }
-
-    @Override
-    public DataEntity<T> deserialize(JsonElement json, Type typeOfT,
-                                     JsonDeserializationContext context) throws JsonParseException {
-        final JsonObject dataEntity = json.getAsJsonObject();
-        final int offset = dataEntity.getAsJsonPrimitive("offset").getAsInt();
-        final int limit = dataEntity.getAsJsonPrimitive("limit").getAsInt();
-        final int total = dataEntity.getAsJsonPrimitive("total").getAsInt();
-        final int count = dataEntity.getAsJsonPrimitive("count").getAsInt();
-        final JsonArray jsonArray = dataEntity.getAsJsonArray(mKey);
-        final List<T> list = new ArrayList<>();
-        for(JsonElement element : jsonArray) {
-            JsonObject jsonObject = element.getAsJsonObject();
-            list.add((T) context.deserialize(jsonObject, clazz));
-        }
-        return new DataEntity(offset, limit,total,count,list);
-    }
+//    private final Class<T> clazz;
+//    private String mKey;
+//
+//    public ComicsDeserializer(Class<T> clazz, String key) {
+//        this.clazz = clazz;
+//        mKey = key;
+//    }
+//
+//    @Override
+//    public DataEntity<T> deserialize(JsonElement json, Type typeOfT,
+//                                     JsonDeserializationContext context) throws JsonParseException {
+//        final JsonObject dataEntity = json.getAsJsonObject();
+//        final int offset = dataEntity.getAsJsonPrimitive("offset").getAsInt();
+//        final int limit = dataEntity.getAsJsonPrimitive("limit").getAsInt();
+//        final int total = dataEntity.getAsJsonPrimitive("total").getAsInt();
+//        final int count = dataEntity.getAsJsonPrimitive("count").getAsInt();
+//        final JsonArray jsonArray = dataEntity.getAsJsonArray(mKey);
+//        final List<T> list = new ArrayList<>();
+//        for(JsonElement element : jsonArray) {
+//            JsonObject jsonObject = element.getAsJsonObject();
+//            list.add((T) context.deserialize(jsonObject, clazz));
+//        }
+//        return new DataEntity(offset, limit,total,count,list);
+//    }
 }

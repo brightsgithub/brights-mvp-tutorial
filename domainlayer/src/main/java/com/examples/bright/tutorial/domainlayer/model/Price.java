@@ -45,7 +45,7 @@ public class Price implements Parcelable{
         dest.writeDouble(this.price);
     }
 
-    public static final Parcelable.Creator<Price> CREATOR = new Parcelable.Creator<Price>() {
+    public static final Creator<Price> CREATOR = new Creator<Price>() {
         @Override
         public Price createFromParcel(final Parcel source) {
             return new Price(source);

@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Comic implements Parcelable{
 
-    private int id; // always handy
+    private long id; // always handy
     private String title;
     private String description;
     private int pageCount;
@@ -24,11 +24,11 @@ public class Comic implements Parcelable{
 
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -101,7 +101,7 @@ public class Comic implements Parcelable{
     }
 
     protected Comic(final Parcel in) {
-        this.id = in.readInt();
+        this.id = in.readLong();
         this.title = in.readString();
         this.description = in.readString();
         this.pageCount = in.readInt();
@@ -116,7 +116,7 @@ public class Comic implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(this.id);
+        dest.writeLong(this.id);
         dest.writeString(this.title);
         dest.writeString(this.description);
         dest.writeInt(this.pageCount);
@@ -125,8 +125,8 @@ public class Comic implements Parcelable{
         dest.writeList(authours);
     }
 
-    public static final Parcelable.Creator<Comic>
-            CREATOR = new Parcelable.Creator<Comic>() {
+    public static final Creator<Comic>
+            CREATOR = new Creator<Comic>() {
         @Override
         public Comic createFromParcel(final Parcel source) {
             return new Comic(source);

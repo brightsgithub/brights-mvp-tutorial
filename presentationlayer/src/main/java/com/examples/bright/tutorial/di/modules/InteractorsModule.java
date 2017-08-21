@@ -1,6 +1,6 @@
 package com.examples.bright.tutorial.di.modules;
 
-import com.examples.bright.tutorial.datalayer.comics.ComicsService;
+import com.examples.bright.tutorial.datalayer.comics.ComicRepository;
 import com.examples.bright.tutorial.domainlayer.interactors.comics.GetComicDetailInteractor;
 import com.examples.bright.tutorial.domainlayer.interactors.comics.GetComicsInteractor;
 import com.examples.bright.tutorial.domainlayer.interactors.comics.GetComicDetailUseCase;
@@ -20,12 +20,12 @@ public class InteractorsModule {
 
     /**
      * Since this
-     * @param comicsService
+     * @param comicRepository
      * @return
      */
     @Provides
-    public GetComicsInteractor providesGetComicInteractor(ComicsService comicsService) {
-        return new GetComicsUseCase(comicsService);
+    public GetComicsInteractor providesGetComicInteractor(ComicRepository comicRepository) {
+        return new GetComicsUseCase(comicRepository);
     }
 
     @Provides

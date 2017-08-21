@@ -13,5 +13,4 @@ public interface ComicsService {
     @GET("v1/public/comics")
     Observable<MarvelWrapper> getComics(
             @Query("limit") int limit);
-
 }

@@ -5,11 +5,15 @@ import android.content.Intent;
 import android.support.test.InstrumentationRegistry;
 
 import com.examples.bright.tutorial.R;
+import com.examples.bright.tutorial.datalayer.DatabaseUtil;
 import com.examples.bright.tutorial.datalayer.NetworkUtil;
+import com.examples.bright.tutorial.datalayer.comics.ComicDatabaseHelper;
+import com.examples.bright.tutorial.datalayer.comics.ComicRepository;
 import com.examples.bright.tutorial.datalayer.comics.ComicsService;
 import com.examples.bright.tutorial.domainlayer.interactors.comics.GetComicsInteractor;
 import com.examples.bright.tutorial.domainlayer.interactors.comics.GetComicsUseCase;
 import com.examples.bright.tutorial.domainlayer.model.Comic;
+import com.examples.bright.tutorial.models.comic.DaoSession;
 import com.examples.bright.tutorial.testutils.FakeServer;
 import com.examples.bright.tutorial.testutils.MyTestRule;
 import com.examples.bright.tutorial.view.comics.ComicDetailActivity;
@@ -45,7 +49,9 @@ public class ComicDetailActivityEspressoTest extends FakeServer {
 
     private Context testContext;
     private ComicsService comicsService;
-
+    private DaoSession daoSession;
+    private ComicDatabaseHelper comicDatabaseHelper;
+    private ComicRepository comicRepository;
     @Before
     public void init() {
         testContext = InstrumentationRegistry.getTargetContext();
@@ -53,11 +59,18 @@ public class ComicDetailActivityEspressoTest extends FakeServer {
         // but what we will do instead is use our fake server.
         useFakeServer();
         comicsService = NetworkUtil.getConfiguredRetrofit(testContext).create(ComicsService.class);
+
+        daoSession = DatabaseUtil.getConfiguredDatabaseSession(testContext);
+        comicDatabaseHelper = new ComicDatabaseHelper(daoSession);
+        comicRepository = new ComicRepository(comicsService, comicDatabaseHelper);
+
+        comicDatabaseHelper.clearDB();
     }
 
     @After
     public void cleanUp() {
         performCleanUp();
+        comicDatabaseHelper.clearDB();
     }
 
     @Test
@@ -90,7 +103,7 @@ public class ComicDetailActivityEspressoTest extends FakeServer {
      */
     private Comic getComic() {
 
-        GetComicsInteractor getComicsInteractor = new GetComicsUseCase(comicsService);
+        GetComicsInteractor getComicsInteractor = new GetComicsUseCase(comicRepository);
         final int recordsRequested = 10;
         final TestSubscriber<List<Comic>> testSubscriber = TestSubscriber.create();
         getComicsInteractor.getComics(recordsRequested).subscribe(testSubscriber);

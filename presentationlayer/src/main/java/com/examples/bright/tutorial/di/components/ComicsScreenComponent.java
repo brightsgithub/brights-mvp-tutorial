@@ -22,7 +22,7 @@ import dagger.Component;
  */
 @ActivityScope
 @Component(
-        dependencies = ServiceAPIComponent.class,
+        dependencies = ComicsRepositoryComponent.class,
         modules = {ComicsScreenModule.class, InteractorsModule.class}
         )
 

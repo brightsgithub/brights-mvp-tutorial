@@ -88,7 +88,7 @@ public class ComicsActivity extends BaseActivity implements ComicsView {
     @Override
     public void initDependencies() {
         DaggerComicsScreenComponent.builder()
-                .serviceAPIComponent(MyApplication.get().getServiceAPIComponent())
+                .comicsRepositoryComponent(MyApplication.get().getComicsRepositoryComponent())
                 .comicsScreenModule(new ComicsScreenModule())
                 .build().inject(this);
     }
