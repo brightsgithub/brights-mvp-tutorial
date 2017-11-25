@@ -35,9 +35,9 @@ public class ComicsPresenter implements IComicPresenter{
      */
     @Override
     public void loadComics(final int limit) {
-        view.hideComicsList();
+        //view.hideComicsList();
         view.hideErrorView();
-        view.showLoadingState();
+        //view.showLoadingState();
         Observable<List<Comic>> comicObservable = getComicsInteractor.getComics(limit);
         comicObservable.subscribe(new Subscriber<List<Comic>>() {
 

@@ -1,4 +1,4 @@
-package com.examples.bright.tutorial.view;
+package com.examples.bright.tutorial.view.listeners;
 
 /**
  * Created by bright on 18/07/2017.

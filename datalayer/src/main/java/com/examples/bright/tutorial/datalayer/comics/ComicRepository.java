@@ -24,11 +24,14 @@ public class ComicRepository {
     }
 
     public Observable<MarvelWrapper> getComics(final int limit) {
-        if(comicDatabaseHelper.isComicsInDB()) {
-            return getComicsfromDB(limit);
-        } else {
-            return getComicsfromServerAndStoreInDB(limit);
-        }
+
+        return getComicsfromServerAndStoreInDB(limit);
+
+//        if(comicDatabaseHelper.isComicsInDB()) {
+//            return getComicsfromDB(limit);
+//        } else {
+//            return getComicsfromServerAndStoreInDB(limit);
+//        }
     }
 
     protected Observable<MarvelWrapper> getComicsfromDB(final int limit) {

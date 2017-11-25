@@ -1,6 +1,7 @@
 package com.examples.bright.tutorial.view.comics;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -13,8 +14,10 @@ import com.examples.bright.tutorial.di.modules.ComicsScreenModule;
 import com.examples.bright.tutorial.domainlayer.model.Comic;
 import com.examples.bright.tutorial.presenter.ComicsPresenter;
 import com.examples.bright.tutorial.view.BaseActivity;
-import com.examples.bright.tutorial.view.OnItemClickListener;
+import com.examples.bright.tutorial.view.listeners.OnItemClickListener;
+import com.examples.bright.tutorial.view.listeners.OnLoadMoreListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -33,7 +36,10 @@ public class ComicsActivity extends BaseActivity implements ComicsView {
     View progressBar;
 
     private ComicsPresenter comicsPresenter;
-    public static int LIMIT_OF_COMICS_RECORDS_TO_REQUEST = 100;
+    public static int LIMIT_OF_COMICS_RECORDS_TO_REQUEST = 10;
+    private Handler handler;
+    private List<Comic> comics = new ArrayList<>();
+    private ComicsAdaptor adapter;
 
     @Inject
     public void setComicsPresenter(ComicsPresenter comicsPresenter) {
@@ -43,7 +49,40 @@ public class ComicsActivity extends BaseActivity implements ComicsView {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        handler = new Handler();
+        initRecyclerView();
+        initLoadMoreListener();
         loadComics(LIMIT_OF_COMICS_RECORDS_TO_REQUEST);
+    }
+
+    private void initLoadMoreListener() {
+
+        adapter.setOnLoadMoreListener(new OnLoadMoreListener() {
+            @Override
+            public void onLoadMore() {
+                //add null , so the adapter will check view_type and show progress bar at bottom
+                comics.add(null);
+                adapter.notifyItemInserted(comics.size() - 1);
+                loadComics(LIMIT_OF_COMICS_RECORDS_TO_REQUEST);
+            }
+        });
+
+    }
+
+    private void initRecyclerView() {
+
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        // in content do not change the layout size of the RecyclerView
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(layoutManager);
+        adapter = new ComicsAdaptor(comics, recyclerView);
+
+        if (itemClickListener != null) {
+            adapter.setOnItemClickListener(itemClickListener);
+        }
+
+        recyclerView.setAdapter(adapter);
     }
 
     private void loadComics(final int limit) {
@@ -103,18 +142,35 @@ public class ComicsActivity extends BaseActivity implements ComicsView {
     };
 
     @Override
-    public void onComicsLoaded(final List<Comic> comics) {
-        final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        recyclerView.setLayoutManager(layoutManager);
-        final ComicsAdaptor adapter = new ComicsAdaptor(comics);
+    public void onComicsLoaded(final List<Comic> moreComics) {
 
-        if (itemClickListener != null) {
-            adapter.setOnItemClickListener(itemClickListener);
-        }
 
-        recyclerView.setAdapter(adapter);
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if(comics.size() > 0) {
+                    //   remove progress item
+                    comics.remove(comics.size() - 1);
+                }
+
+
+                adapter.notifyItemRemoved(comics.size());
+                for (Comic comic: moreComics) {
+                    comics.add(comic);
+                    adapter.notifyItemInserted(comics.size());
+                }
+
+                adapter.setLoaded();
+                //or you can add all at once but do not forget to call mAdapter.notifyDataSetChanged();
+
+            }
+        }, 2000);
+
+
+
     }
+
+
 
     @Override
     public void showComicDetailView(Comic comic) {
